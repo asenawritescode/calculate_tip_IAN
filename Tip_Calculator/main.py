@@ -42,7 +42,7 @@ def calculate_tip (amount):
         # return result
         return f"Your bill is {amount}, your tip is {tip}, and your total value is {total}"
     except ValueError:
-        print("Please provide a valid number")
+        raise ValueError("Please provide a valid amount")
     except Exception as e :
         print("An unexpected error has occured : ", e )
 
@@ -50,8 +50,14 @@ def calculate_tip (amount):
 # Test Cases
 # 275, 40, and 430
 
-test_cases = [275, 40, 430]
 
-for test_case in test_cases:
-    print(f"Tip for {test_case}")
-    print(calculate_tip(test_case) + "\n")
+
+def main():
+    test_cases = [275, 40, 430]
+
+    for test_case in test_cases:
+        print(f"Tip for {test_case}")
+        print(calculate_tip(test_case) + "\n")
+
+if __name__ == "__main__":
+    main()
